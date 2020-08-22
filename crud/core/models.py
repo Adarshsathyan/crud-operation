@@ -6,4 +6,4 @@ class Student(models.Model):
     address = models.CharField(max_length=250)
     city = models.CharField(max_length=200)
     state = models.CharField(max_length=200)
-    pincode = models.IntegerField(max_length=30)
+    pincode = models.IntegerField()
