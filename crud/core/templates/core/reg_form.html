@@ -4,13 +4,29 @@
 Registration
 {% endblock %}
 
+
 {% block content %}
+
 <form method="post" >
-   <div class="container col-md-8 bg-light p-5">
+   <div class="container col-md-9 bg-light p-5 ">
        <div class="h2 text-center col-md-12 mb-5">
            <h2>Register Here!</h2>
        </div>
-       {{form|crispy}}
+       {{form.name|as_crispy_field}}
+       {{form.address|as_crispy_field}}
+       <div class="row">
+           <div class="col-md-4">
+           {{form.state|as_crispy_field}}
+           </div>
+           <div class="col-md-4">
+           {{form.city|as_crispy_field}}
+           </div>
+           <div class="col-md-4">
+           {{form.pincode|as_crispy_field}}
+           </div>
+       </div>
+
+       {% csrf_token %}
 
   <button type="submit" class="btn btn-primary">Submit</button>
    </div>

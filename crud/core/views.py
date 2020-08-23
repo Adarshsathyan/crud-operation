@@ -1,6 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import StudentForm
 # Create your views here.
 def index(request):
-    form = StudentForm
+    if request.method == "POST":
+        form = StudentForm(request.POST)
+        if form.is_valid():
+            post = form.save()
+            post.save()
+            return redirect('index')
+    else:
+        form = StudentForm()
     return render(request,'core/reg_form.html',{'form':form})
