@@ -18,6 +18,7 @@ Registered students
       <th scope="col">City</th>
         <th scope="col">State</th>
       <th scope="col">Pincode</th>
+
     </tr>
   </thead>
     {% for detail in details %}
@@ -29,6 +30,8 @@ Registered students
       <td>{{detail.city}}</td>
         <td>{{detail.state}}</td>
         <td>{{detail.pincode}}</td>
+      <th scope="col"><a href="#"><i class="fas fa-trash" style="color:#db5d51;"></i></a></th>
+      <th scope="col"><a href="#"><i class="fas fa-user-edit"style="color:#6ee083;"></i></a></th>
     </tr>
   </tbody>
     {% endfor %}
