@@ -7,7 +7,7 @@ Registration
 
 {% block content %}
 
-<form method="post" >
+<form action="" method="post" >
    <div class="container col-md-9 bg-light p-5 ">
        <div class="h2 text-center col-md-12 mb-5">
            <h2>Register Here!</h2>
@@ -28,10 +28,9 @@ Registration
 
        {% csrf_token %}
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" >Submit</button>
    </div>
 
 </form>
-
 
 {% endblock %}

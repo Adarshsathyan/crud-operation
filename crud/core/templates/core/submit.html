@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+Registration
+{% endblock %}
+
+
+{% block content %}
+
+<form method="post" action="{% url 'details' %}" >
+   <div class="container col-md-9 bg-light p-5 ">
+       <div class="h2 text-center col-md-12 mb-5">
+           <h2 class="text-success">Registered Successfully</h2>
+       </div>
+        <div class=" col-md-12 text-center">
+            <button type="submit" class="btn btn-primary w-25" >Show List</button>
+        </div>
+
+   </div>
+    {% csrf_token %}
+</form>
+
+
+{% endblock %}
