@@ -20,3 +20,22 @@ def details(request):
 
 def submit(request):
     return render(request,'core/submit.html')
+def update(request,id):
+    student = Student.objects.get(pk=id)
+    form = StudentForm(instance=student)
+    if request.method == "POST":
+        form = StudentForm(request.POST,instance=student)
+        if form.is_valid():
+            post = form.save()
+            post.save()
+            return redirect('submit')
+    return render(request,'core/update.html',{'form':form})
+def delete(request,id):
+    if request.method == "POST":
+        Student.objects.get(pk=id).delete()
+        return redirect('details')
+
+
+
+
+
